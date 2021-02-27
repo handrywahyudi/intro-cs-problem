@@ -7,7 +7,6 @@
 # In the case of ties, print the first substring. For example, if s = 'abcbcd', then your program should print
 # "Longest substring in alphabetical order is: abc"
 
-
 def longest_substring(s):
     start = 0
     length = 1
