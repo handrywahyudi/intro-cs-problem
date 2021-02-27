@@ -8,17 +8,16 @@
 # "Longest substring in alphabetical order is: abc"
 
 
-
 def longest_substring(s):
     start = 0
     length = 1
     maxcount = 0
-    for i in range(len(s)-1):
-        if s[i+1] >= s[i]:
-           length += 1
+    for i in range(len(s) - 1):
+        if s[i + 1] < s[i]:
+            length = 1
         else:
-            length =1
-    
+            length += 1
+
         if length > maxcount:
             maxcount = length
             start = i + 2 - maxcount
@@ -30,4 +29,3 @@ def longest_substring(s):
 if __name__ == "__main__":
     s = 'khlidfalkjduehkliudfl'
     print("Longest substring in alphabetical order is:", longest_substring(s))
-
