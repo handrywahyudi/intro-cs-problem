@@ -1,3 +1,5 @@
+# Problem Set 2
+# Problem 1: https://bit.ly/3kTczMF
 def remaining_balance(balance, annual_interest_rate, monthly_payment_rate):
     remaining = 0.0
     for month in range(12):

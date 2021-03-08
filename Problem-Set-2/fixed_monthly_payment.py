@@ -1,3 +1,6 @@
+# Problem Set 2
+# Problem 2: https://bit.ly/3bp6sfW
+
 def fixed_monthly_payment(balance, annual_interest_rate):
     current_balance = balance
     fixed_payment = 10
