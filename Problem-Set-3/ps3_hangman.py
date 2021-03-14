@@ -120,7 +120,7 @@ def hangman(secretWord):
 
 
 if __name__ == '__main__':
-    #letter_guessed = ['a', 'j', 'P', 'o', 'l', 'e', 'b', 'r', 't', 'q', 'm', 'j', 'n']
-    letter_guessed = ['b', 'c' 'a', 'q', 'p', 't']
+    letter_guessed = ['a', 'j', 'P', 'o', 'l', 'e', 'b', 'r', 't', 'q', 'm', 'j', 'n']
+    #letter_guessed = ['b', 'c' 'a', 'q', 'p', 't']
     secret_word = 'aPartmenT'
     print(isWordGuessed(secret_word, letter_guessed))
