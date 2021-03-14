@@ -55,6 +55,11 @@ def isWordGuessed(secretWord, lettersGuessed):
       False otherwise
     '''
     # FILL IN YOUR CODE HERE...
+    letters_guessed_lower = ''.join(lettersGuessed).lower()
+    if secretWord == letters_guessed_lower:
+        return True
+    else:
+        return False
 
 
 def getGuessedWord(secretWord, lettersGuessed):
@@ -104,3 +109,9 @@ def hangman(secretWord):
 
 # secretWord = chooseWord(wordlist).lower()
 # hangman(secretWord)
+
+
+if __name__ == '__main__':
+    letter_guessed = ['a', 'p', 'p', 'l', 'e']
+    secret_word = 'apple'
+    print(isWordGuessed(secret_word, letter_guessed))
