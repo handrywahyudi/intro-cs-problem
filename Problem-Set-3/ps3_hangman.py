@@ -78,6 +78,14 @@ def getGuessedWord(secretWord, lettersGuessed):
       what letters in secretWord have been guessed so far.
     '''
     # FILL IN YOUR CODE HERE...
+    secret_word_lower_list = list(secretWord.lower())
+    underscore_list = []
+    iteration = 0
+    while iteration < len(secret_word_lower_list):
+        underscore_list.append("_")
+        iteration += 1
+
+    return underscore_list
 
 
 def getAvailableLetters(lettersGuessed):
@@ -121,6 +129,7 @@ def hangman(secretWord):
 
 if __name__ == '__main__':
     letter_guessed = ['a', 'j', 'P', 'o', 'l', 'e', 'b', 'r', 't', 'q', 'm', 'j', 'n']
-    #letter_guessed = ['b', 'c' 'a', 'q', 'p', 't']
+#    #letter_guessed = ['b', 'c' 'a', 'q', 'p', 't']
     secret_word = 'aPartmenT'
-    print(isWordGuessed(secret_word, letter_guessed))
+#    print(isWordGuessed(secret_word, letter_guessed))
+    print(getGuessedWord(secret_word, letter_guessed))
