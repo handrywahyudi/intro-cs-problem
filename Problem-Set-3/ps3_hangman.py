@@ -79,13 +79,26 @@ def getGuessedWord(secretWord, lettersGuessed):
     '''
     # FILL IN YOUR CODE HERE...
     secret_word_lower_list = list(secretWord.lower())
+    letter_guessed_lower_string = ''.join(lettersGuessed).lower()
     underscore_list = []
     iteration = 0
     while iteration < len(secret_word_lower_list):
-        underscore_list.append("_")
+        underscore_list.append("_ ")
         iteration += 1
 
-    return underscore_list
+    for letter_guessed_element in letter_guessed_lower_string:
+        if letter_guessed_element in secret_word_lower_list:
+            has_index_letter = [secret_word_index for secret_word_index, element in enumerate(secret_word_lower_list) if element == letter_guessed_element]
+            #print(has_index_letter)
+            for has_letter_element in has_index_letter:
+                underscore_list[int(has_letter_element)] = letter_guessed_element
+                #print(underscore_list[has_index_letter])
+
+    secret_word_string = ""
+    for underscore_list_element in underscore_list:
+        secret_word_string += underscore_list_element
+
+    return secret_word_string
 
 
 def getAvailableLetters(lettersGuessed):
@@ -128,8 +141,8 @@ def hangman(secretWord):
 
 
 if __name__ == '__main__':
-    letter_guessed = ['a', 'j', 'P', 'o', 'l', 'e', 'b', 'r', 't', 'q', 'm', 'j', 'n']
-#    #letter_guessed = ['b', 'c' 'a', 'q', 'p', 't']
-    secret_word = 'aPartmenT'
+    #letter_guessed = ['a', 'j', 'P', 'o', 'l', 'e', 'b', 'r', 't', 'q', 'm', 'j', 'n']
+    letter_guessed = ['e', 'i', 'k', 'P', 'r', 's']
+    secret_word = 'apPLe'
 #    print(isWordGuessed(secret_word, letter_guessed))
     print(getGuessedWord(secret_word, letter_guessed))
