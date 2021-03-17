@@ -8,6 +8,7 @@
 # (so be sure to read the docstrings!)
 
 import random
+import string
 
 WORDLIST_FILENAME = "words.txt"
 
@@ -108,6 +109,18 @@ def getAvailableLetters(lettersGuessed):
       yet been guessed.
     '''
     # FILL IN YOUR CODE HERE...
+    alphabetical_letters = string.ascii_lowercase
+    alphabetical_letters_list = list(alphabetical_letters)
+    for letter_guessed_element in lettersGuessed:
+        letter_guessed_element = str(letter_guessed_element).lower()
+        if letter_guessed_element in alphabetical_letters_list:
+            alphabetical_letters_list.remove(letter_guessed_element)
+
+    alphabetical_string = ""
+    for alphabetical_letters_element in alphabetical_letters_list:
+        alphabetical_string += alphabetical_letters_element
+
+    return alphabetical_string
 
 
 def hangman(secretWord):
@@ -142,7 +155,8 @@ def hangman(secretWord):
 
 if __name__ == '__main__':
     #letter_guessed = ['a', 'j', 'P', 'o', 'l', 'e', 'b', 'r', 't', 'q', 'm', 'j', 'n']
-    letter_guessed = ['e', 'i', 'k', 'P', 'r', 's']
+    letter_guessed = ['a', 'c', 'e', 'h', 'x', 'z']
     secret_word = 'apPLe'
-#    print(isWordGuessed(secret_word, letter_guessed))
-    print(getGuessedWord(secret_word, letter_guessed))
+    #print(isWordGuessed(secret_word, letter_guessed))
+    #print(getGuessedWord(secret_word, letter_guessed))
+    print(getAvailableLetters(letter_guessed))
